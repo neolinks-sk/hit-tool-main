@@ -30,8 +30,8 @@
       "destination": "https://travel-checklist-ten-inky.vercel.app/"
     },
     {
-      "source": "/travel-checklist/:path*",
-      "destination": "https://travel-checklist-ten-inky.vercel.app/:path*"
+      "source": "/travel-checklist/(.*)",
+      "destination": "https://travel-checklist-ten-inky.vercel.app/$1"
     },
     {
       "source": "/calcnote",
