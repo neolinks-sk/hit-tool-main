@@ -1,6 +1,6 @@
 "use client";
 
-import { Search, SearchX, Sparkles, X } from "lucide-react";
+import { Search, SearchX, X } from "lucide-react";
 import { useMemo, useState } from "react";
 import ToolCard from "./ToolCard";
 import { CATEGORIES, Tool, ToolCategory, tools } from "../data/tools";
@@ -35,7 +35,7 @@ export default function ToolExplorer() {
       // 検索キーワード一致チェック
       if (!query) return true;
 
-      const searchableText = `${tool.title} ${tool.subTitle} ${tool.description} ${tool.category}`.toLowerCase();
+      const searchableText = `${tool.title} ${tool.description} ${tool.category}`.toLowerCase();
       return searchableText.includes(query);
     });
   }, [searchQuery, selectedCategory]);
@@ -56,8 +56,7 @@ export default function ToolExplorer() {
       {/* セクションヘッダー */}
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-1">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+          <div className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-1">
             Tool Directory
           </div>
           <h2

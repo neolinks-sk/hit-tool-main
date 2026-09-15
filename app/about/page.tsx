@@ -1,9 +1,9 @@
 import {
   Calendar,
   Globe,
+  Info,
   Mail,
   ShieldCheck,
-  Sparkles,
   User,
 } from "lucide-react";
 import type { Metadata } from "next";
@@ -91,7 +91,7 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-1 gap-2 bg-slate-50/50 p-4 sm:grid-cols-3 sm:gap-4 sm:p-5">
                   <dt className="flex items-start gap-2 pt-0.5 font-medium text-slate-700">
-                    <Sparkles className="h-4 w-4 text-indigo-600" aria-hidden="true" />
+                    <Info className="h-4 w-4 text-indigo-600" aria-hidden="true" />
                     運営目的・概要
                   </dt>
                   <dd className="leading-relaxed text-slate-700 sm:col-span-2">

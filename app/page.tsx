@@ -1,4 +1,3 @@
-import { Sparkles } from "lucide-react";
 import Header from "./components/Header";
 import ToolExplorer from "./components/ToolExplorer";
 import { SITE_CONFIG } from "./lib/site-config";
@@ -25,7 +24,6 @@ export default function Home() {
             <div className="mx-auto max-w-2xl text-center">
               {/* ピルバッジ */}
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-1 text-xs font-medium text-indigo-700 shadow-sm ring-1 ring-indigo-100/80 backdrop-blur-xs">
-                <Sparkles className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                 <span>シンプルで使いやすいWebツール</span>
               </div>
 
