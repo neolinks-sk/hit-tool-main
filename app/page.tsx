@@ -34,7 +34,7 @@ export default function Home() {
               </h1>
 
               {/* サブタイトル */}
-              <p className="text-sm font-medium leading-relaxed text-slate-600 sm:text-base md:text-lg">
+              <p className="text-sm font-normal leading-relaxed text-slate-600 sm:text-base">
                 <span className="inline-block">日常のちょっとした「困りごと」を、</span>
                 <br />
                 <span className="inline-block">すぐに解決できるWebツールを集めたポータルサイトです</span>
