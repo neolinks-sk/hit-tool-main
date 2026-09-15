@@ -1,3 +1,4 @@
+import { Check, Laptop, RefreshCw } from "lucide-react";
 import Header from "./components/Header";
 import ToolExplorer from "./components/ToolExplorer";
 import { SITE_CONFIG } from "./lib/site-config";
@@ -23,7 +24,7 @@ export default function Home() {
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
             <div className="mx-auto max-w-2xl text-center">
               {/* ピルバッジ */}
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-indigo-50/80 px-3.5 py-1 text-xs font-medium text-indigo-600 ring-1 ring-indigo-100 backdrop-blur-xs">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3.5 py-1 text-xs font-semibold text-indigo-600 shadow-sm">
                 <span>シンプルで使いやすいWebツール</span>
               </div>
 
@@ -32,25 +33,23 @@ export default function Home() {
                 {SITE_CONFIG.name}
               </h1>
 
-              {/* サブタイトル（スマホ2行維持） */}
-              <p className="text-[13px] leading-relaxed text-slate-600 tracking-tight min-[360px]:text-sm min-[360px]:tracking-tight sm:text-base sm:tracking-normal md:text-lg">
-                <span className="inline-block">日常生活のちょっとした困りごとを、</span>
-                <br />
-                <span className="inline-block">すぐに解決できるWebツールを集めたポータルサイトです。</span>
+              {/* サブタイトル */}
+              <p className="text-sm font-medium leading-relaxed text-slate-600 sm:text-base md:text-lg">
+                日常のちょっとした困りごとを、スッキリ解決するWebツール集
               </p>
 
-              {/* 特徴ピル */}
-              <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs text-slate-500">
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+              {/* メリット要素：アイコン付きミニバッジ */}
+              <div className="mt-6 flex flex-wrap items-center justify-center gap-2.5 text-xs">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white px-3 py-1 font-medium text-slate-600 shadow-xs">
+                  <Check className="h-3.5 w-3.5 text-emerald-600" aria-hidden="true" />
                   完全無料・登録不要
                 </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-indigo-500" />
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white px-3 py-1 font-medium text-slate-600 shadow-xs">
+                  <Laptop className="h-3.5 w-3.5 text-indigo-600" aria-hidden="true" />
                   スマホ・PC両対応
                 </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <span className="h-1.5 w-1.5 rounded-full bg-sky-500" />
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200/80 bg-white px-3 py-1 font-medium text-slate-600 shadow-xs">
+                  <RefreshCw className="h-3.5 w-3.5 text-sky-600" aria-hidden="true" />
                   随時新ツール追加中
                 </span>
               </div>
