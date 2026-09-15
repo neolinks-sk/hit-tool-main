@@ -39,4 +39,6 @@
     },
     {
       "source": "/calcnote/:path*",
-      "destination": "https://calcnote-app.vercel.app/calcnote/:path*"
+      "destination": "https://calcnote-app.vercel.app/calcnote/:path*"}
+    ]
+  }
