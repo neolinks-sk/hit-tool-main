@@ -1,4 +1,11 @@
-import { Calculator, Refrigerator, type LucideIcon } from "lucide-react";
+import {
+  Calculator,
+  CloudSun,
+  FileSpreadsheet,
+  ListChecks,
+  Refrigerator,
+  type LucideIcon,
+} from "lucide-react";
 
 export type Tool = {
   id: string;
@@ -14,7 +21,7 @@ export const tools: Tool[] = [
     title: "レシピ人数変更・調味料g変換｜ケーキ型サイズ変更",
     description:
       "人数の変更やケーキ型のサイズ変更に伴う調味料・材料の分量を自動計算するツール",
-    url: "https://hit-tool.com/recipe-calculator",
+    url: "/recipe-calculator",
     icon: Calculator,
   },
   {
@@ -22,7 +29,31 @@ export const tools: Tool[] = [
     title: "冷蔵庫レスキュー｜あまり物でズボラ飯",
     description:
       "冷蔵庫に残っている食材から作れるズボラ飯・簡単レシピを提案するツール",
-    url: "https://hit-tool.com/zubora-recipe",
+    url: "/zubora-recipe",
     icon: Refrigerator,
+  },
+  {
+    id: "travel-checklist",
+    title: "持ち物リストチェッカー",
+    description:
+      "旅行や出張の準備・持ち物を一覧でスマートにチェック・管理できるツール",
+    url: "/travel-checklist",
+    icon: ListChecks,
+  },
+  {
+    id: "fashion-weather",
+    title: "今日の服装ナビ｜天気に合わせた服装提案",
+    description:
+      "気温や天候に合わせた最適なコーディネートや服装を提案するツール",
+    url: "/fashion-weather",
+    icon: CloudSun,
+  },
+  {
+    id: "calcnote",
+    title: "Calcnote-メモ＆手書きができる無料電卓アプリ",
+    description:
+      "テキストと一緒に計算式を残して自動計算・保存できる計算メモツール",
+    url: "/calcnote",
+    icon: FileSpreadsheet,
   },
 ];
