@@ -56,7 +56,7 @@ export default function ToolExplorer() {
       {/* セクションヘッダー */}
       <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <div className="inline-flex items-center text-xs font-semibold uppercase tracking-wider text-indigo-600 mb-1">
+          <div className="inline-flex items-center text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">
             Tool Directory
           </div>
           <h2

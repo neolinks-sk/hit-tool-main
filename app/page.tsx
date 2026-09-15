@@ -23,7 +23,7 @@ export default function Home() {
           <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20">
             <div className="mx-auto max-w-2xl text-center">
               {/* ピルバッジ */}
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/90 px-3.5 py-1 text-xs font-medium text-indigo-700 shadow-sm ring-1 ring-indigo-100/80 backdrop-blur-xs">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-indigo-50/80 px-3.5 py-1 text-xs font-medium text-indigo-600 ring-1 ring-indigo-100 backdrop-blur-xs">
                 <span>シンプルで使いやすいWebツール</span>
               </div>
 
