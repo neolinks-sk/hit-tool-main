@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import Footer from "./components/Footer";
 import { SITE_CONFIG } from "./lib/site-config";
@@ -9,6 +9,12 @@ const notoSansJP = Noto_Sans_JP({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
@@ -57,8 +63,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className={`${notoSansJP.variable} h-full antialiased`}>
-      <body className="flex min-h-full flex-col bg-slate-50 font-sans text-slate-800">
-        <div className="flex flex-1 flex-col">{children}</div>
+      <body className="flex min-h-full flex-col bg-slate-50 font-sans text-slate-800 isolate">
+        <div className="flex flex-1 flex-col isolate">{children}</div>
         <Footer />
       </body>
     </html>

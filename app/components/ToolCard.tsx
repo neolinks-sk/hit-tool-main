@@ -77,12 +77,6 @@ export default function ToolCard({ tool }: ToolCardProps) {
         </div>
 
         <div className="flex items-center gap-1.5 sm:gap-2">
-          {tool.isNew && (
-            <span className="inline-flex items-center rounded-full bg-gradient-to-r from-rose-500 to-pink-500 px-2 py-0.5 text-[10px] font-bold tracking-wider text-white shadow-xs">
-              NEW
-            </span>
-          )}
-
           <span
             className={`rounded-md border px-2 py-0.5 text-[11px] font-medium ${badgeStyle.badgeBg} ${badgeStyle.badgeText} ${badgeStyle.badgeBorder}`}
           >

@@ -21,22 +21,25 @@ export default function ToolExplorer() {
     return counts;
   }, []);
 
-  // 検索・カテゴリでフィルタリング
+  // 検索・カテゴリでフィルタリング（リアルタイム連動）
   const filteredTools = useMemo(() => {
-    const query = searchQuery.trim().toLowerCase();
+    const trimmedQuery = searchQuery.trim().toLowerCase();
 
     return tools.filter((tool) => {
-      // カテゴリ一致チェック
+      // 1. カテゴリ一致判定
       const matchesCategory =
         selectedCategory === "すべて" || tool.category === selectedCategory;
 
       if (!matchesCategory) return false;
 
-      // 検索キーワード一致チェック
-      if (!query) return true;
+      // 2. 検索キーワード一致判定
+      if (!trimmedQuery) return true;
 
-      const searchableText = `${tool.title} ${tool.description} ${tool.category}`.toLowerCase();
-      return searchableText.includes(query);
+      const titleMatch = tool.title.toLowerCase().includes(trimmedQuery);
+      const descriptionMatch = tool.description.toLowerCase().includes(trimmedQuery);
+      const categoryMatch = tool.category.toLowerCase().includes(trimmedQuery);
+
+      return titleMatch || descriptionMatch || categoryMatch;
     });
   }, [searchQuery, selectedCategory]);
 
@@ -50,29 +53,21 @@ export default function ToolExplorer() {
   return (
     <section
       id="tools"
-      className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16"
+      className="relative z-10 isolate mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16 pointer-events-auto"
       aria-labelledby="tools-heading"
     >
       {/* セクションヘッダー */}
-      <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <div className="inline-flex items-center text-xs font-medium uppercase tracking-wider text-slate-400 mb-1">
-            Tool Directory
-          </div>
-          <h2
-            id="tools-heading"
-            className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl"
-          >
-            取り扱いツール一覧
-          </h2>
-          <p className="mt-1 text-sm text-slate-500">
-            日常生活や作業効率化に役立つWebアプリをラインナップしています。
-          </p>
-        </div>
+      <div className="mb-6 flex flex-row items-center justify-between gap-4">
+        <h2
+          id="tools-heading"
+          className="text-xl font-bold tracking-tight text-slate-900 sm:text-2xl"
+        >
+          取り扱いツール一覧
+        </h2>
 
         {/* ツール件数バッジ */}
-        <div className="flex items-center gap-2 self-start sm:self-auto">
-          <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-medium text-slate-600">
+        <div className="flex items-center gap-2">
+          <span className="rounded-full border border-slate-200/80 bg-white px-3 py-1 text-xs font-medium text-slate-600 shadow-2xs">
             全 <strong className="text-slate-900">{tools.length}</strong> 件中{" "}
             <strong className="text-indigo-600">{filteredTools.length}</strong>{" "}
             件を表示
@@ -81,9 +76,9 @@ export default function ToolExplorer() {
       </div>
 
       {/* 検索バー＆カテゴリフィルターコントロール */}
-      <div className="mb-8 space-y-4 rounded-2xl border border-slate-200/80 bg-white/80 p-4 shadow-sm backdrop-blur-sm sm:p-5">
+      <div className="relative z-50 pointer-events-auto mb-8 space-y-4 rounded-2xl border border-slate-200/80 bg-white p-4 shadow-sm sm:p-5">
         {/* 検索入力バー */}
-        <div className="relative">
+        <div className="relative w-full pointer-events-auto">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3.5 text-slate-400">
             <Search className="h-4 w-4" aria-hidden="true" />
           </div>
@@ -92,35 +87,35 @@ export default function ToolExplorer() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="ツール名、キーワード、機能などで検索..."
-            className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 pl-10 pr-10 text-sm text-slate-800 placeholder-slate-400 transition-all focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-indigo-500/10"
+            className="w-full rounded-xl border border-slate-200 bg-slate-50/50 py-2.5 pl-10 pr-10 text-sm text-slate-800 placeholder-slate-400 transition-all focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-indigo-500/10 pointer-events-auto"
           />
           {searchQuery && (
             <button
               type="button"
               onClick={() => setSearchQuery("")}
-              className="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 transition-colors hover:text-slate-600"
+              className="absolute inset-y-0 right-0 flex cursor-pointer items-center pr-3 text-slate-400 hover:text-slate-600 pointer-events-auto touch-manipulation"
               aria-label="検索キーワードをクリア"
             >
-              <X className="h-4 w-4" />
+              <X className="pointer-events-none h-4 w-4" />
             </button>
           )}
         </div>
 
-        {/* カテゴリ切り替えタブ（スマホ時は横スクロール可能） */}
-        <div className="flex items-center justify-between gap-2 pt-1 border-t border-slate-100">
-          <div className="flex w-full items-center gap-2 overflow-x-auto py-1 scrollbar-none">
+        {/* カテゴリ切り替えタブ */}
+        <div className="flex items-center justify-between gap-2 border-t border-slate-100 pt-1 pointer-events-auto">
+          <div className="flex w-full items-center gap-2 overflow-x-auto py-1 scrollbar-none pointer-events-auto">
             <button
               type="button"
               onClick={() => setSelectedCategory("すべて")}
-              className={`inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
+              className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all pointer-events-auto touch-manipulation ${
                 selectedCategory === "すべて"
                   ? "bg-indigo-600 text-white shadow-xs"
                   : "bg-slate-100/80 text-slate-600 hover:bg-slate-200/80 hover:text-slate-800"
               }`}
             >
-              <span>すべて</span>
+              <span className="pointer-events-none select-none">すべて</span>
               <span
-                className={`rounded-full px-1.5 py-0.2 text-[10px] ${
+                className={`pointer-events-none select-none rounded-full px-1.5 py-0.2 text-[10px] ${
                   selectedCategory === "すべて"
                     ? "bg-white/20 text-white"
                     : "bg-slate-200/70 text-slate-500"
@@ -137,15 +132,15 @@ export default function ToolExplorer() {
                   key={cat}
                   type="button"
                   onClick={() => setSelectedCategory(cat)}
-                  className={`inline-flex shrink-0 items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all ${
+                  className={`inline-flex shrink-0 cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-medium transition-all pointer-events-auto touch-manipulation ${
                     isActive
                       ? "bg-indigo-600 text-white shadow-xs"
                       : "bg-slate-100/80 text-slate-600 hover:bg-slate-200/80 hover:text-slate-800"
                   }`}
                 >
-                  <span>{cat}</span>
+                  <span className="pointer-events-none select-none">{cat}</span>
                   <span
-                    className={`rounded-full px-1.5 py-0.2 text-[10px] ${
+                    className={`pointer-events-none select-none rounded-full px-1.5 py-0.2 text-[10px] ${
                       isActive
                         ? "bg-white/20 text-white"
                         : "bg-slate-200/70 text-slate-500"
@@ -163,7 +158,7 @@ export default function ToolExplorer() {
             <button
               type="button"
               onClick={handleResetFilters}
-              className="hidden shrink-0 text-xs text-indigo-600 underline-offset-4 hover:underline sm:inline-block"
+              className="hidden shrink-0 cursor-pointer text-xs text-indigo-600 underline-offset-4 hover:underline sm:inline-block pointer-events-auto touch-manipulation"
             >
               条件をリセット
             </button>
@@ -195,7 +190,7 @@ export default function ToolExplorer() {
           <button
             type="button"
             onClick={handleResetFilters}
-            className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 hover:shadow-md"
+            className="inline-flex cursor-pointer items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-indigo-700 hover:shadow-md pointer-events-auto touch-manipulation"
           >
             フィルターをリセットする
           </button>
