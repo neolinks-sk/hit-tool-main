@@ -35,7 +35,9 @@ export default function Home() {
 
               {/* サブタイトル */}
               <p className="text-sm font-medium leading-relaxed text-slate-600 sm:text-base md:text-lg">
-                日常のちょっとした困りごとを、スッキリ解決するWebツール集
+                <span className="inline-block">日常のちょっとした「困りごと」を、</span>
+                <br />
+                <span className="inline-block">すぐに解決できるWebツールを集めたポータルサイトです</span>
               </p>
 
               {/* メリット要素：アイコン付きミニバッジ */}

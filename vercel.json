@@ -30,8 +30,8 @@
       "destination": "https://my-checklist-teal.vercel.app/travel-checklist"
     },
     {
-      "source": "/travel-checklist/:path*",
-      "destination": "https://my-checklist-teal.vercel.app/travel-checklist/:path*"
+      "source": "/travel-checklist/:match*",
+      "destination": "https://my-checklist-teal.vercel.app/travel-checklist/:match*"
     },
     {
       "source": "/calcnote",
@@ -39,6 +39,7 @@
     },
     {
       "source": "/calcnote/:path*",
-      "destination": "https://calcnote-app.vercel.app/calcnote/:path*"}
-    ]
-  }
+      "destination": "https://calcnote-app.vercel.app/calcnote/:path*"
+    }
+  ]
+}
