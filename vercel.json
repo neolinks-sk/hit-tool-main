@@ -27,11 +27,11 @@
     },
     {
       "source": "/travel-checklist",
-      "destination": "https://my-checklist-teal.vercel.app/travel-checklist"
+      "destination": "https://travel-checklist2.vercel.app/travel-checklist"
     },
     {
       "source": "/travel-checklist/:match*",
-      "destination": "https://my-checklist-teal.vercel.app/travel-checklist/:match*"
+      "destination": "https://travel-checklist2.vercel.app/travel-checklist/:match*"
     },
     {
       "source": "/calcnote",
