@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import Script from "next/script";
 import Footer from "./components/Footer";
 import { SITE_CONFIG } from "./lib/site-config";
 import "./globals.css";
@@ -63,6 +64,23 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja" className={`${notoSansJP.variable} h-full antialiased`}>
+      <head>
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-KXFP18WL67"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-KXFP18WL67');
+          `}
+        </Script>
+      </head>
       <body className="flex min-h-full flex-col bg-slate-50 font-sans text-slate-800 isolate">
         <div className="flex flex-1 flex-col isolate">{children}</div>
         <Footer />
