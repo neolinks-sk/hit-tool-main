@@ -1,13 +1,8 @@
 import { Check, Laptop } from "lucide-react";
-import { Poppins } from "next/font/google";
+import Image from "next/image";
 import Header from "./components/Header";
 import ToolExplorer from "./components/ToolExplorer";
 import { SITE_CONFIG } from "./lib/site-config";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  weight: ["800", "900"],
-});
 
 export default function Home() {
   return (
@@ -34,18 +29,16 @@ export default function Home() {
                 <span>シンプルで使いやすいWebツール</span>
               </div>
 
-              {/* メインタイトル */}
-              <h1 className="mb-4">
-                <span
-                  className={`${poppins.className} inline-block text-4xl font-black tracking-wide text-[#0C2B4E] sm:text-5xl md:text-6xl`}
-                  style={{
-                    WebkitTextStroke: "0.75px #0C2B4E",
-                    paintOrder: "stroke fill",
-                    letterSpacing: "0.05em",
-                  }}
-                >
-                  {SITE_CONFIG.name}
-                </span>
+              {/* メインロゴ画像（h1） */}
+              <h1 className="mb-4 flex justify-center">
+                <Image
+                  src="/logo.png"
+                  alt={SITE_CONFIG.name}
+                  width={320}
+                  height={80}
+                  priority
+                  className="h-12 w-auto object-contain sm:h-14 md:h-16"
+                />
               </h1>
 
               {/* サブタイトル */}
