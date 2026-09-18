@@ -53,7 +53,7 @@ export const tools: Tool[] = [
   },
   {
     id: "travel-checklist",
-    title: "持ち物リストチェッカー",
+    title: "持ち物チェックリスト",
     description:
       "旅行や出張の準備・持ち物を一覧でスマートにチェック・管理できるツール",
     url: "/travel-checklist",
