@@ -6,7 +6,7 @@ import { SITE_CONFIG } from "./lib/site-config";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["800"],
+  weight: ["700", "800"],
 });
 
 export default function Home() {
@@ -36,7 +36,7 @@ export default function Home() {
 
               {/* メインタイトル */}
               <h1
-                className={`${plusJakartaSans.className} mb-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl`}
+                className={`${plusJakartaSans.className} mb-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl`}
               >
                 {SITE_CONFIG.name}
               </h1>
