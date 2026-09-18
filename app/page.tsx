@@ -1,7 +1,13 @@
 import { Check, Laptop } from "lucide-react";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import Header from "./components/Header";
 import ToolExplorer from "./components/ToolExplorer";
 import { SITE_CONFIG } from "./lib/site-config";
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["800"],
+});
 
 export default function Home() {
   return (
@@ -29,7 +35,9 @@ export default function Home() {
               </div>
 
               {/* メインタイトル */}
-              <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl md:text-5xl">
+              <h1
+                className={`${plusJakartaSans.className} mb-4 text-3xl font-black tracking-tight text-slate-900 sm:text-4xl md:text-5xl`}
+              >
                 {SITE_CONFIG.name}
               </h1>
 
