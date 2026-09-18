@@ -74,6 +74,13 @@ export default function RootLayout({
   return (
     <html lang="ja" className={`${notoSansJP.variable} h-full antialiased`}>
       <head>
+        {/* Google AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5640102305897046"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         {/* Google Analytics (gtag.js) */}
         <Script
           async
