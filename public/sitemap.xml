@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- メインポータル TOP -->
+  <url>
+    <loc>https://www.hit-tool.com/</loc>
+    <priority>1.0</priority>
+  </url>
+  <!-- 子アプリ1：計量計算 -->
+  <url>
+    <loc>https://www.hit-tool.com/recipe-calculator</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- 子アプリ2：ずぼらレシピ -->
+  <url>
+    <loc>https://www.hit-tool.com/zubora-recipe</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- 子アプリ3：服装天気 -->
+  <url>
+    <loc>https://www.hit-tool.com/fashion-weather</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- 子アプリ4：旅行チェックリスト -->
+  <url>
+    <loc>https://www.hit-tool.com/travel-checklist</loc>
+    <priority>0.8</priority>
+  </url>
+  <!-- 子アプリ5：電卓ノート -->
+  <url>
+    <loc>https://www.hit-tool.com/calcnote</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
