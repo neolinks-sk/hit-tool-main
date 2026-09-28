@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   alternates: {
-    canonical: SITE_CONFIG.url,
+    canonical: "/",
   },
 };
 
