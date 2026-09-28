@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.hit-tool.com/sitemap.xml
+Sitemap: https://hit-tool.com/sitemap.xml
