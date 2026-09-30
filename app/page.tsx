@@ -4,9 +4,45 @@ import Header from "./components/Header";
 import ToolExplorer from "./components/ToolExplorer";
 import { SITE_CONFIG } from "./lib/site-config";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      name: "HITtools",
+      alternateName: ["ヒットツールズ", "HITtools ポータル"],
+      url: "https://hit-tool.com",
+      description: "日常生活、料理、作業効率化に役立つWeb便利ツールポータル",
+      publisher: {
+        "@type": "Organization",
+        name: "HITtools",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://hit-tool.com/logo.png",
+        },
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "ホーム",
+          item: "https://hit-tool.com",
+        },
+      ],
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Header />
 
       <main className="flex-1 isolate">
