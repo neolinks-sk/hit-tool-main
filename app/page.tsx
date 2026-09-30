@@ -39,6 +39,9 @@ export default function Home() {
                   priority
                   className="h-12 w-auto object-contain sm:h-14 md:h-16"
                 />
+                <span className="sr-only">
+                  HITtools | 便利計算・Webツールポータル
+                </span>
               </h1>
 
               {/* サブタイトル */}
