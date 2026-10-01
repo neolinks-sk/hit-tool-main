@@ -31,7 +31,7 @@ export const CATEGORIES: readonly ToolCategory[] = [
 export const tools: Tool[] = [
   {
     id: "recipe-calculator",
-    title: "レシピ人数変更・調味料g変換｜ケーキ型サイズ変更",
+    title: "レシピ人数変更・調味料g変換 | ケーキ型サイズ変更",
     description:
       "人数の変更やケーキ型のサイズ変更に伴う調味料・材料の分量を自動計算するツール",
     url: "/recipe-calculator",
@@ -42,7 +42,7 @@ export const tools: Tool[] = [
   },
   {
     id: "zubora-recipe",
-    title: "冷蔵庫レスキュー｜あまり物でズボラ飯",
+    title: "冷蔵庫レスキュー | あまり物でズボラ飯",
     description:
       "冷蔵庫に残っている食材から作れるズボラ飯・簡単レシピを提案するツール",
     url: "/zubora-recipe",
@@ -64,7 +64,7 @@ export const tools: Tool[] = [
   },
   {
     id: "fashion-weather",
-    title: "今日の服装ナビ｜天気に合わせた服装提案",
+    title: "今日の服装ナビ | 天気に合わせた服装提案",
     description:
       "気温や天候に合わせた最適なコーディネートや服装を提案するツール",
     url: "/fashion-weather",
@@ -75,7 +75,7 @@ export const tools: Tool[] = [
   },
   {
     id: "calcnote",
-    title: "Calcnote-メモ＆手書きができる無料電卓アプリ",
+    title: "Calcnote | メモ＆手書きができる無料電卓アプリ",
     description:
       "テキストと一緒に計算式を残して自動計算・保存できる計算メモツール",
     url: "/calcnote",
