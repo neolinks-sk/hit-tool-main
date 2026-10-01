@@ -20,10 +20,11 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
   title: {
-    default: `${SITE_CONFIG.name} | 便利計算・Webツールポータル`,
+    default: "HITtools | 日常の手間をスグに解決する便利なWebツール",
     template: `%s | ${SITE_CONFIG.name}`,
   },
-  description: SITE_CONFIG.description,
+  description:
+    "料理のレシピ人数変更・調味料換算やメモ付き電卓、持ち物リストなど、日々のちょっとした手間や計算を瞬時に解決する便利Webツール集。日常生活や作業をより快適に効率化します。登録不要・完全無料で誰でも手軽に利用可能です。",
   keywords: [
     "Webツール",
     "便利ツール",
@@ -40,8 +41,9 @@ export const metadata: Metadata = {
     locale: "ja_JP",
     url: SITE_CONFIG.url,
     siteName: SITE_CONFIG.name,
-    title: `${SITE_CONFIG.name} | 便利計算・Webツールポータル`,
-    description: SITE_CONFIG.description,
+    title: "HITtools | 日常の手間をスグに解決する便利なWebツール",
+    description:
+      "料理のレシピ人数変更・調味料換算やメモ付き電卓、持ち物リストなど、日々のちょっとした手間や計算を瞬時に解決する便利Webツール集。日常生活や作業をより快適に効率化します。登録不要・完全無料で誰でも手軽に利用可能です。",
     images: [
       {
         url: "/og-image.jpg",
@@ -53,8 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${SITE_CONFIG.name} | 便利計算・Webツールポータル`,
-    description: SITE_CONFIG.description,
+    title: "HITtools | 日常の手間をスグに解決する便利なWebツール",
+    description:
+      "料理のレシピ人数変更・調味料換算やメモ付き電卓、持ち物リストなど、日々のちょっとした手間や計算を瞬時に解決する便利Webツール集。日常生活や作業をより快適に効率化します。登録不要・完全無料で誰でも手軽に利用可能です。",
     images: ["/og-image.jpg"],
   },
   robots: {
